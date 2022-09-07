@@ -1,10 +1,18 @@
 import React from 'react';
-import './Toggle.css';
+import './Toggle.scss';
 
-function Toggle() {
+type props = {
+  id: string;
+  label: string;
+  on: boolean;
+  onToggle: () => void;
+}
+
+function Toggle({id, label, on, onToggle}: props) {
   return (
     <div className="Toggle">
-      <p>Toggle</p>
+      <label htmlFor={id}>{label}</label>
+      <input type="checkbox" id={id} checked={on} onChange={() => onToggle()} />
     </div>
   );
 }

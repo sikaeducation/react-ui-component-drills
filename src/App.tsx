@@ -5,6 +5,7 @@ import {Routes, Route, useNavigate, BrowserRouter as Router, useParams} from 're
 import Toggle from './Toggle/Toggle';
 
 function App() {
+  /*
   const navigate = useNavigate()
   const components = [{
     id: "toggle",
@@ -36,6 +37,7 @@ function App() {
       </Router>
     </div>
   );
+  */
 }
 
 export default App;
