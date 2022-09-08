@@ -1,43 +1,40 @@
-import React, {ChangeEvent} from 'react';
-import './App.css';
-import {Routes, Route, useNavigate, BrowserRouter as Router, useParams} from 'react-router-dom';
-
-import Toggle from './Toggle/Toggle';
+import {ChangeEvent, useEffect, useState} from 'react';
+import './App.scss';
+import {Routes, Route, useNavigate, Link} from 'react-router-dom';
+import ViewIndex from './views/ViewIndex';
+import ViewComponent from './views/ViewComponent';
 
 function App() {
-  /*
-  const navigate = useNavigate()
-  const components = [{
-    id: "toggle",
-    name: "Toggle",
-  }]
-  const params = useParams()
-  const currentComponent = params[0]
-
-  const handleChange = ({ target }: ChangeEvent<HTMLSelectElement>) => {
-    navigate(`/${target?.value}`)
-  }
+  const components = [{id: "toggle", name: "Toggle"} ] as const
 
   return (
     <div className="App">
-      <Router>
-        <header className="App-header">
-          <select value={currentComponent} onChange={handleChange}>
-            {components.map(({id, name}) => (
-              <option key={id} value={id}>{name}</option>
-            ))}
-          </select>
-        </header>
-        <Routes>
-          <Route
-            element={ <Toggle /> }
-            path="toggle"
-          />
-        </Routes>
-      </Router>
+      <header className="App-header">
+        <h1><Link to="/">React UI Library</Link></h1>
+      </header>
+      <nav>
+        <ul>
+          {components.map(({id, name} : {id: string; name: string; }) => (
+            <li key={id}>
+              <Link to={`/${id}`}>{name}</Link>
+            </li>
+          ))}
+        </ul>
+      </nav>
+      <main>
+      <Routes>
+        <Route
+          element={<ViewIndex />}
+          path="/"
+        />
+        <Route
+          element={<ViewComponent />} 
+          path=":componentId"
+        />
+      </Routes>
+      </main>
     </div>
   );
-  */
 }
 
 export default App;
