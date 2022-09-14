@@ -9,12 +9,14 @@ function ViewToggle() {
     <div className="ViewToggle">
       <section className="component-demo">
         <h2>Toggle</h2>
-        <Toggle
-          id="toggle"
-          label="I agree to these terms"
-          on={toggled}
-          onToggle={() => setToggled(!toggled)}
-        />
+        <div className="component">
+          <Toggle
+            id="toggle"
+            label="I agree to these terms"
+            on={toggled}
+            onToggle={() => setToggled(!toggled)}
+          />
+        </div>
       </section>
       <section>
         <h2>Usage</h2>
@@ -35,31 +37,33 @@ function ViewToggle() {
       <section className="api-documentation">
         <h2>API</h2>
         <table>
-          <tr>
-            <th>Name</th>
-            <th>Type</th>
-            <th>Description</th>
-          </tr>
-          <tr>
-            <td>id</td>
-            <td>string</td>
-            <td>Used for anchoring and to link the label to the input field</td>
-          </tr>
-          <tr>
-            <td>label</td>
-            <td>string</td>
-            <td>Label text</td>
-          </tr>
-          <tr>
-            <td>on</td>
-            <td>boolean</td>
-            <td>The current state of the toggle</td>
-          </tr>
-          <tr>
-            <td>onToggle</td>
-            <td>{`() => void`}</td>
-            <td>Called when someone interacts with the toggle</td>
-          </tr>
+          <tbody>
+            <tr>
+              <th>Name</th>
+              <th>Type</th>
+              <th>Description</th>
+            </tr>
+            <tr>
+              <td>id</td>
+              <td>string</td>
+              <td>Used for anchoring and to link the label to the input field</td>
+            </tr>
+            <tr>
+              <td>label</td>
+              <td>string</td>
+              <td>Label text</td>
+            </tr>
+            <tr>
+              <td>on</td>
+              <td>boolean</td>
+              <td>The current state of the toggle</td>
+            </tr>
+            <tr>
+              <td>onToggle</td>
+              <td>{`() => void`}</td>
+              <td>Called when someone interacts with the toggle</td>
+            </tr>
+          </tbody>
         </table>
       </section>
     </div>
