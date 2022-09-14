@@ -1,73 +1,47 @@
 import {useState} from 'react';
 
 import Toggle from '../components/Toggle/Toggle';
+import ComponentDocumentation from './ComponentDocumentation';
 
-function ViewToggle() {
+export default function ViewToggle() {
   const [toggled, setToggled] = useState(false)
 
   return (
-    <div className="ViewToggle">
-      <section className="component-demo">
-        <h2>Toggle</h2>
-        <div className="component">
-          <Toggle
-            id="toggle"
-            label="I agree to these terms"
-            on={toggled}
-            onToggle={() => setToggled(!toggled)}
-          />
-        </div>
-      </section>
-      <section>
-        <h2>Usage</h2>
-        <p>User input with an on/off states.</p>
-        <pre>
-          <code>
-            {`
+    <ComponentDocumentation
+      name="Toggle"
+      usage="User input with an on/off states."
+      example={`
 <Toggle
   id="toggle"
   label="I agree to these terms"
   on={toggled}
   onToggle={() => setToggled(!toggled)}
 />
-            `}
-          </code>
-        </pre>
-      </section>
-      <section className="api-documentation">
-        <h2>API</h2>
-        <table>
-          <tbody>
-            <tr>
-              <th>Name</th>
-              <th>Type</th>
-              <th>Description</th>
-            </tr>
-            <tr>
-              <td>id</td>
-              <td>string</td>
-              <td>Used for anchoring and to link the label to the input field</td>
-            </tr>
-            <tr>
-              <td>label</td>
-              <td>string</td>
-              <td>Label text</td>
-            </tr>
-            <tr>
-              <td>on</td>
-              <td>boolean</td>
-              <td>The current state of the toggle</td>
-            </tr>
-            <tr>
-              <td>onToggle</td>
-              <td>{`() => void`}</td>
-              <td>Called when someone interacts with the toggle</td>
-            </tr>
-          </tbody>
-        </table>
-      </section>
-    </div>
-  );
+      `}
+      props={[{
+        name: "id",
+        type: "string",
+        description: "Used for anchoring and to link the label to the input field",
+      },{
+        name: "label",
+        type: "string",
+        description: "Label text",
+      },{
+        name: "on",
+        type: "boolean",
+        description: "The current state of the toggle",
+      },{
+        name: "onToggle",
+        type: "() => void",
+        description: "Called when someone interacts with the toggle",
+      }]}
+    >
+      <Toggle
+        id="toggle"
+        label="I agree to these terms"
+        on={toggled}
+        onToggle={() => setToggled(!toggled)}
+      />
+    </ComponentDocumentation>
+  )
 }
-
-export default ViewToggle;
