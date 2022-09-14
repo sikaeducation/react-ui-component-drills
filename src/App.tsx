@@ -4,7 +4,13 @@ import ViewIndex from './views/ViewIndex';
 import ViewComponent from './views/ViewComponent';
 
 function App() {
-  const components = [{id: "toggle", name: "Toggle"} ] as const
+  const components = [{
+    id: "toggle",
+    name: "Toggle",
+  }, {
+    id: "input-field",
+    name: "InputField",
+  }] as const
 
   return (
     <div className="App">

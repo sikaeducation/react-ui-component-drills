@@ -1,0 +1,16 @@
+.InputField {
+  padding: 12px;
+  label {
+    display: block;
+    font-size: 12px;
+    margin-bottom: 6px;
+    color: hsl(0, 0%, 40%);
+  }
+  input {
+    display: block;
+    padding: 6px;
+    margin-right: 12px;
+    box-sizing: border-box;
+    width: 100%;
+  }
+}
