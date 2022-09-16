@@ -4,7 +4,7 @@ COMPONENT_NAME=$1
 mkdir "src/components/$COMPONENT_NAME"
 
 # Tests
-read -r -d '' TEST_BOILERPLATE << 'TEST'
+read -r -d '' TEST_BOILERPLATE << TEST
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import $COMPONENT_NAME from "./$COMPONENT_NAME";
@@ -22,7 +22,7 @@ TEST
 echo "$TEST_BOILERPLATE" > "src/components/$COMPONENT_NAME/$COMPONENT_NAME.test.tsx"
 
 # Component
-read -r -d '' COMPONENT_BOILERPLATE << 'COMPONENT'
+read -r -d '' COMPONENT_BOILERPLATE << COMPONENT
 import './$COMPONENT_NAME.scss';
 
 type props = {
@@ -39,7 +39,7 @@ COMPONENT
 echo "$COMPONENT_BOILERPLATE" > "src/components/$COMPONENT_NAME/$COMPONENT_NAME.tsx"
 
 # Styles
-read -r -d '' STYLE_BOILERPLATE << 'STYLES'
+read -r -d '' STYLE_BOILERPLATE << STYLES
 .$COMPONENT_NAME {
 }
 STYLES
@@ -47,7 +47,7 @@ STYLES
 echo "$STYLE_BOILERPLATE" > "src/components/$COMPONENT_NAME/$COMPONENT_NAME.scss"
 
 # View
-read -r -d '' VIEW_BOILERPLATE << 'VIEW'
+read -r -d '' VIEW_BOILERPLATE << VIEW
 import Toggle from '../components/$COMPONENT_NAME/$COMPONENT_NAME';
 import ComponentDocumentation from './ComponentDocumentation';
 
