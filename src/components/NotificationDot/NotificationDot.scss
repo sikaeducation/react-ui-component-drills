@@ -1,0 +1,19 @@
+.NotificationDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: hsl(0, 50%, 50%);
+  animation: wow 0.2s;
+}
+
+@keyframes wow {
+  0% {
+    transform: scale(0.1);
+  }
+  30% {
+    transform: scale(1.4);
+  }
+  100% {
+    transform: scale(1.0);
+  }
+}

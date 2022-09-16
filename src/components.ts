@@ -1,4 +1,5 @@
 import ViewInputField from "./views/ViewInputField"
+import ViewNotificationDot from "./views/ViewNotificationDot"
 import ViewToggle from "./views/ViewToggle"
 
 export const components = [{
@@ -9,6 +10,10 @@ export const components = [{
   id: "input-field",
   name: "InputField",
   view: ViewInputField,
+}, {
+  id: "notification-dot",
+  name: "NotificationDot",
+  view: ViewNotificationDot,
 }] as const
 
 export const componentIds = components.map(component => component.id)
