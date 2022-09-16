@@ -2,16 +2,9 @@ import './App.scss';
 import {Routes, Route, Link} from 'react-router-dom';
 import ViewIndex from './views/ViewIndex';
 import ViewComponent from './views/ViewComponent';
+import {components} from './components';
 
 function App() {
-  const components = [{
-    id: "toggle",
-    name: "Toggle",
-  }, {
-    id: "input-field",
-    name: "InputField",
-  }] as const
-
   return (
     <div className="App">
       <header className="App-header">

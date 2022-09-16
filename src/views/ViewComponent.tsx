@@ -1,19 +1,11 @@
 import {useParams} from "react-router-dom";
-import ViewToggle from "./ViewToggle";
-import ViewInputField from "./ViewInputField";
-
-const componentIds = ["toggle", "input-field"] as const
-type ComponentId = typeof componentIds[number]
+import {ComponentId, componentIds, components} from "../components";
 
 function ViewComponent() {
-  const components = {
-    toggle: ViewToggle,
-    "input-field": ViewInputField,
-  } as const
   const params = useParams()
   const componentId = params.componentId || "toggle"
   if (isComponentName(componentId)) {
-    const CurrentComponent = components[componentId]
+    const CurrentComponent = components.find(component => component.id === componentId)!.view
     return (
       <div className="view-component">
         <CurrentComponent />
