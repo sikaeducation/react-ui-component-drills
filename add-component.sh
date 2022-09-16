@@ -19,7 +19,7 @@ test("renders a checked state", () => {
 });
 TEST
 
-echo $TEST_BOILERPLATE > "src/components/$COMPONENT_NAME/$COMPONENT_NAME.test.tsx"
+echo "$TEST_BOILERPLATE" > "src/components/$COMPONENT_NAME/$COMPONENT_NAME.test.tsx"
 
 # Component
 read -r -d '' COMPONENT_BOILERPLATE << 'COMPONENT'
@@ -36,7 +36,7 @@ export default function $COMPONENT_NAME({}: props) {
 }
 COMPONENT
 
-echo $COMPONENT_BOILERPLATE > "src/components/$COMPONENT_NAME/$COMPONENT_NAME.tsx"
+echo "$COMPONENT_BOILERPLATE" > "src/components/$COMPONENT_NAME/$COMPONENT_NAME.tsx"
 
 # Styles
 read -r -d '' STYLE_BOILERPLATE << 'STYLES'
@@ -44,7 +44,7 @@ read -r -d '' STYLE_BOILERPLATE << 'STYLES'
 }
 STYLES
 
-echo $STYLE_BOILERPLATE > "src/components/$COMPONENT_NAME/$COMPONENT_NAME.scss"
+echo "$STYLE_BOILERPLATE" > "src/components/$COMPONENT_NAME/$COMPONENT_NAME.scss"
 
 # View
 read -r -d '' VIEW_BOILERPLATE << 'VIEW'
@@ -72,4 +72,4 @@ export default function View$COMPONENT_NAME() {
   )
 }
 VIEW
-echo $VIEW_BOILERPLATE > "src/views/View$COMPONENT_NAME.tsx"
+echo "$VIEW_BOILERPLATE" > "src/views/View$COMPONENT_NAME.tsx"
