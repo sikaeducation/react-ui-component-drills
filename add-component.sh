@@ -12,7 +12,6 @@ import $COMPONENT_NAME from "./$COMPONENT_NAME";
 const { click } = userEvent
 
 test("renders a checked state", () => {
-  const handler = jest.fn()
   render(<$COMPONENT_NAME />);
   const $COMPONENT_NAME = screen.getByLabelText(/label text/i);
   expect($COMPONENT_NAME).toBeChecked()
@@ -23,7 +22,7 @@ echo "$TEST_BOILERPLATE" > "src/components/$COMPONENT_NAME/$COMPONENT_NAME.test.
 
 # Component
 read -r -d '' COMPONENT_BOILERPLATE << COMPONENT
-import './$COMPONENT_NAME.scss';
+import "./$COMPONENT_NAME.scss";
 
 type props = {
 }
@@ -48,18 +47,18 @@ echo "$STYLE_BOILERPLATE" > "src/components/$COMPONENT_NAME/$COMPONENT_NAME.scss
 
 # View
 read -r -d '' VIEW_BOILERPLATE << VIEW
-import Toggle from '../components/$COMPONENT_NAME/$COMPONENT_NAME';
-import ComponentDocumentation from './ComponentDocumentation';
+import $COMPONENT_NAME from "../components/$COMPONENT_NAME/$COMPONENT_NAME";
+import ComponentDocumentation from "./ComponentDocumentation";
 
 export default function View$COMPONENT_NAME() {
   return (
     <ComponentDocumentation
       name="$COMPONENT_NAME"
       usage=""
-      example={`
+      example={\`
 <$COMPONENT_NAME
 />
-      `}
+      \`}
       props={[{
         name: "",
         type: "",
