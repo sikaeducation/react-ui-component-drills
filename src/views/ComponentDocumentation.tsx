@@ -34,12 +34,12 @@ function ComponentDocumentation({ name, usage, example, props, children }: Props
         <section className="api-documentation">
           <h2>API</h2>
           <table>
-            <tr>
-              <th>Name</th>
-              <th>Type</th>
-              <th>Description</th>
-            </tr>
             <tbody>
+              <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Description</th>
+              </tr>
               {props.map(({name, type, description}) => (
                 <tr key={name}>
                   <td>{name}</td>

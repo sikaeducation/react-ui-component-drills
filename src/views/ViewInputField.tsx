@@ -32,8 +32,12 @@ export default function ViewInputField() {
         type: "string",
         description: "The current state of the input",
       },{
+        name: "required?",
+        type: "boolean",
+        description: "Whether the field is required, defaults to false",
+      },{
         name: "onUpdate",
-        type: "{`(newValue: string) => void`}",
+        type: "(newValue: string) => void",
         description: "Called when someone changes the input",
       }]}
     >

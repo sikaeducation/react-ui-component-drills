@@ -8,7 +8,7 @@ type props = {
   onUpdate: (newValue: string) => void;
 }
 
-function InputField({id, label, value, required, onUpdate}: props) {
+function InputField({id, label, value, required = false, onUpdate}: props) {
   return (
     <div className="InputField">
       <label htmlFor={id}>{label}</label>
