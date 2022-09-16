@@ -17,7 +17,7 @@ test("renders a checked state", () => {
   const $COMPONENT_NAME = screen.getByLabelText(/label text/i);
   expect($COMPONENT_NAME).toBeChecked()
 });
-'TEST'
+TEST
 
 echo $TEST_BOILERPLATE > "src/components/$COMPONENT_NAME/$COMPONENT_NAME.test.tsx"
 
@@ -34,7 +34,7 @@ export default function $COMPONENT_NAME({}: props) {
     </div>
   );
 }
-'COMPONENT'
+COMPONENT
 
 echo $COMPONENT_BOILERPLATE > "src/components/$COMPONENT_NAME/$COMPONENT_NAME.tsx"
 
@@ -42,7 +42,7 @@ echo $COMPONENT_BOILERPLATE > "src/components/$COMPONENT_NAME/$COMPONENT_NAME.ts
 read -r -d '' STYLE_BOILERPLATE << 'STYLES'
 .$COMPONENT_NAME {
 }
-'STYLES'
+STYLES
 
 echo $STYLE_BOILERPLATE > "src/components/$COMPONENT_NAME/$COMPONENT_NAME.scss"
 
@@ -71,5 +71,5 @@ export default function View$COMPONENT_NAME() {
     </ComponentDocumentation>
   )
 }
-'VIEW'
+VIEW
 echo $VIEW_BOILERPLATE > "src/views/View$COMPONENT_NAME.tsx"
